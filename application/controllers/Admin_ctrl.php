@@ -10,7 +10,12 @@ class Admin_ctrl extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('submenu/admin');
+		$this->session->set_userdata('active_nav', 'division');
+		if($this->session->has_userdata("username")) {
+			$this->load->view('submenu/admin');
+		} else {
+			redirect("Homepage_ctrl");
+		}
 	}
 	public function getAllDivision(){
 		$this->db->select('*');

@@ -7,10 +7,190 @@
     <link rel="icon" type="image/x-icon" href="assets/img/telu.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <!-- <link rel="stylesheet" href="assets/css/style.css"/> -->
     <script src="assets/js/script.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=“stylesheet” type='text/css'>
     <title>TelU Esports</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            /* font-family: Poppins !important; */
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: Poppins !important;
+            /* background-color: #000000; */
+            background: linear-gradient(180.96deg, #000000 0.82%, #00917A 129.1%);
+            color: #ffffff;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* padding: 20px 50px; */
+            color: #ffffff;
+            font-family: Poppins !important;
+            margin-top: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+        }
+
+        .nav-links a:active {
+            color: #00917A;
+        }
+
+        .navbar-brand {
+            position: relative;
+            width: 50px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #00917A;
+            transition: 0.5s;
+        }
+
+        .active {
+            color: #00917A;
+        }
+
+        .menu li {
+            padding: 10px;
+            text-align: center;
+            width: 120px;
+            /* background-color: #00917A;
+            border-radius: 5px; */
+        }
+
+        .menu button {
+            text-align: center;
+            /* padding: 14px; */
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+        }
+
+        .contact {
+            color: #ffffff;
+            background-color: #00917A;
+            border-radius: 5px;
+            width: 120px;
+            font-size: 16px;
+            font-family: Poppins;
+            cursor: pointer;
+        }
+
+        .contact img {
+            width: 50%;
+        }
+
+        .btn-close:hover {
+            background-color: #ff0000;
+        }
+
+        .about-us {
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .aboutus-page {
+            margin-top: 50px;
+        }
+
+        .aboutus-title {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 50px;
+            font-style: italic;
+            font-weight: bold;
+            color: #00917A;
+        }
+
+        .aboutus-content {
+            margin-bottom: 0px;
+            font-size: 18px;
+        }
+
+        .about-us .card {
+            background-color: #004b3e;
+            border: none;
+            margin-top: 30px;
+            min-height: 300px;
+            border-radius: 20px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
+        }
+
+        .about-us .card-title {
+            font-weight: bold;
+        }
+
+        .about-us .card-text {
+            font-size: 14px;
+        }
+
+        .profile {
+            background-color: #004b3e;
+            border-radius: 20px;
+            margin-top: 50px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
+        }
+
+        .profile img {
+            width: 50px;
+        }
+
+        .profile-title {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .profile p {
+            font-size: 24px;
+        }
+
+        /* .profile-content {
+            font-size: 24px;
+        } */
+
+        .video-profile iframe {
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
+        }
+
+        .video-profile-title {
+            font-weight: bold;
+            color: #00917A;
+            font-style: italic;
+            font-size: 50px;
+            margin-top: 50px;
+        }
+
+    </style>
 </head>
 <body>
     <?php $this->load->view('navbar'); ?>
@@ -82,16 +262,6 @@
         </div>
       </div>
     </section>
-    <footer>
-      <div class="footer">
-        <div class="footer-logo">
-          <img src="assets/img/logo.png">
-          <!-- <p>#GAMEON</p> -->
-        </div>
-        <!-- <br> -->
-        <p class="copyright">&copy 2022 TELU ESPORTS</p>
-        <!-- <br> -->
-      </div>
-    </footer>
+    <?php $this->load->view('footer'); ?>
   </body>
 </html>
