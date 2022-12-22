@@ -82,6 +82,39 @@
                     </div>
                   </div>
             </div>
+            <div class="login">
+              <button href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A;">Login</button>
+                  <!-- Modal -->
+                  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-dark rounded">
+                        <div class="modal-header" style="border: none;">
+                          <h5 class="modal-title">Login</h5>
+                          <button type="button" class="btn btn-close btn-outline-success" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="container">
+                            <div class="table-responsive">
+                            <form method="POST" action="<?php echo base_url("/Homepage_ctrl/login"); ?>">
+                            <div class="form-group">
+                              <label for="exampleInputEmail1"">Username</label>
+                              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="username"><br>
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Password</label>
+                              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" name="password">
+                              <br>
+                            </div>
+                            <div class="login text-center">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                            </div>  
+                            </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
           </div>
         </ul>
       </nav>

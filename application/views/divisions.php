@@ -26,7 +26,7 @@
             echo'
             <div class="card border-0">
                 <div class="division">
-                    <img src="'.base_url('assets/uploads/').$division['division_image'].'" class="card-img-top" alt="...">
+                    <img src="'.base_url('assets/uploads/divisions/').$division['division_image'].'.png" class="card-img-top" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)">
                     <div class="card-body" style="background-color: #004b3e;color: white;">
                       <h3 class="card-title">'.$division['division_name'].'</h3>
                       <br>
@@ -48,7 +48,7 @@
           </div>
       </div>
     </section>
-    <section class="form-oprec">
+    <!-- <section class="form-oprec">
       <div class="container py-5 h-100">
         <div class="row justify-content-center align-items-center h-100">
           <div class="col-12 col-lg-9 col-xl-7">
@@ -58,7 +58,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     
     <footer>
       <div class="footer">

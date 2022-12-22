@@ -11,6 +11,17 @@
     <script src="assets/js/script.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=“stylesheet” type='text/css'>
     <title>TelU Esports</title>
+    
+    <style>
+        .table-calendar table tbody tr td a{
+            color:#00917A !important;
+            font-weight:bold !important;
+            cursor: text !important;
+        }
+        .table-calendar table tbody tr td{
+            padding:10px !important;
+        }
+    </style>
 </head>
 <body>
     <?php $this->load->view('navbar'); ?>
@@ -44,7 +55,30 @@
     <section class="event">
       <!-- <div class="container"> -->
         <h1 class="event-title">EVENT NOW ON TEL-U ESPORTS</h1>
-        <div class="tec">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-4">
+            <div class="table-calendar">
+              <?php 
+                  $prefs = array(
+                    'start_day' => 'monday',
+                    'month_type' => 'long',
+                    'day_type' => 'short'
+                );
+
+                $data = [];
+                //Get day in this month
+                foreach ($event as $ev) {
+                    $day = $ev['day'];
+                    $data += [ "$day" => " " ];
+                }
+                
+                $this->load->library('calendar', $prefs);
+                
+                echo $this->calendar->generate(date("Y"), date("m"),$data);
+              ?>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-6 col-sm-8"><div class="tec">
           <div class="row">
             <div class="col">
               <img src="assets/img/tec.png">
@@ -52,7 +86,9 @@
           </div>
         </div>
         <h4 class="tec-title">TEL-U ESPORTS CHAMPIONSHIP 2022</h4>
-        <p class="tec-content">Kami TEL-U ESPORTS mengadakan kompetisi tingkat nasional untuk semua universitas di Indonesia yang puncaknya akan berada pada bulan Agustus. Segera hubungi komunitas esports kampus kalian untuk mendaftarkan diri agar dapat ikut serta dalan kompetisi TELKOM UNIVERSITY ESPORTS CHAMPIONSHIP.</p>
+        <p class="tec-content">Kami TEL-U ESPORTS mengadakan kompetisi tingkat nasional untuk semua universitas di Indonesia yang puncaknya akan berada pada bulan Agustus. Segera hubungi komunitas esports kampus kalian untuk mendaftarkan diri agar dapat ikut serta dalan kompetisi TELKOM UNIVERSITY ESPORTS CHAMPIONSHIP.</p></div>
+        </div>
+        
       <!-- </div> -->
     </section>
     <footer>

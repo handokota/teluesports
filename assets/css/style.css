@@ -318,7 +318,7 @@ footer {
     border-top-right-radius: 20px;
 } */
 
-.divisions .pubg img {
+/* .divisions .pubg img {
     border-top-left-radius: 20px !important;
     border-top-right-radius: 20px !important;
     box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
@@ -334,7 +334,7 @@ footer {
     border-top-left-radius: 20px !important;
     border-top-right-radius: 20px !important;
     box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
-}
+} */
 
 .divisions .card-group{
     display:flex;
@@ -435,9 +435,9 @@ footer {
     margin-top: 50px;
 }
 
-.form-oprec {
+/* .form-oprec {
     background: linear-gradient(180.96deg, #000000 0.82%, #00917A 129.1%);
-}
+} */
 
 .form-oprec .card {
     background-color: transparent;

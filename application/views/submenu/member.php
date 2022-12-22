@@ -14,28 +14,37 @@
 </head>
 <body>
     <?php $this->load->view('navbar'); ?>
-    <section class="about-us">
-        <?php
-        foreach($data_division as $div)
-        {
-            echo'
-            <div class="container">
-            <p class="aboutus-page">Division > <a style="color:#00917A;">'.$div['division_name'].'</a></p> 
-            <div class="card-body p-4 p-md-5">
+    <section class="divisions-form">
+    <?php
+    foreach($data_division as $div) {
+      echo'
+      <p class="divisions-page text-center">Divisions > <a style="color:#00917A;">'.$div['division_name'].'</a></p> 
+      ';
+    } ?>
+    <h1 class="divisions-title text-center">DIVISIONS</h1>
+    <div class="form-oprec" style="background: transparent;">
+      <div class="container">
+        <div class="row justify-content-center align-items-center h-100">
+          <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-2-strong card-registration" style="border: none;">
+              <?php foreach($data_division as $div) {
+                echo'
+                  <div class="container">
+                    <div class="card-body p-4 p-md-5">
                     <h3 class="text-center" style="font-weight: bold;">Open Registration Member for Division</h3>
                     <h5 class="mb-4 pb-2 pb-md-3 mb-md-5 text-center">Become One of Us</h5>
                     <form method = "POST" action="'; echo base_url('/Member_ctrl/inputData') ; echo'" enctype="multipart/form-data"> <!--tambahin di controller-->
                       <input hidden name="division" value="'. $div['division_name'].'">
-                    <div class="row">
+                      <div class="row">
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
-                            <label class="form-label" for="firstName" style="font-weight: bold;">First Name</label>
+                            <label class="form-label" for="firstName">First Name</label>
                             <input type="text" id="firstName" class="form-control form-control-lg" name="fname"/>
                           </div>
                         </div>
                         <div class="col-md-6 mb-4">
                           <div class="form-outline">
-                            <label class="form-label" for="lastName" style="font-weight: bold;">Last Name</label>
+                            <label class="form-label" for="lastName">Last Name</label>
                             <input type="text" id="lastName" class="form-control form-control-lg" name="lname"/>
                           </div>
                         </div>
@@ -43,33 +52,43 @@
                       <div class="row">
                         <div class="col-md-12 mb-4 pb-2">
                           <div class="form-outline">
-                            <label class="form-label" for="inlineFormInputGroupUsername" style="font-weight: bold;">Username</label>
+                            <label class="form-label" for="inlineFormInputGroupUsername">Username</label>
                             <input type="text" id="username" class="form-control form-control-lg" name="username"/>
                           </div>
                         </div>
                         <div class="col-md-12 mb-4 pb-2">
                           <div class="form-outline">
-                            <label class="form-label" for="password" style="font-weight: bold;">Password</label>
+                            <label class="form-label" for="password">Password</label>
                             <input type="password" id="password" class="form-control form-control-lg" name="password"/>
                           </div>
                         </div>
+                        <div class="col-md-12 mb-4 pb-2">
+                          <div class="form-outline">
+                            <label class="mb-2 pb-1">Division</label>
+                            <p class="mb-0" style="font-weight: bold;">'.$div['division_name'].'</p>
+                          </div>
+                        </div>
+                        <div class="col-md-12 mb-4 pb-2">
+                          <div class="form-outline">
+                            <label class="mb-2 pb-1">Upload KTM</label><br>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="inputFile">
+                          </div>
+                        </div>
                       </div>
-                      <label class="mb-2 pb-1" style="font-weight: bold;">Division</label><br>
-                      <h3> '.$div['division_name'].' </h3>
-                      <br>
-                      <div class="form-group">
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="inputFile">
-                      </div>
+
                       <div class="mt-4 pt-2 text-center">
-                        <input class="btn btn-primary btn-lg" type="submit" value="Join us" />
+                        <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
                       </div>
                     </form>
+                    </div>
                   </div>
+                ';
+              } ?>
+            </div>
           </div>
-            ';
-        }
-        ?>
-     
+        </div>
+      </div>
+    </div>
     </section>
     <footer>
       <div class="footer">

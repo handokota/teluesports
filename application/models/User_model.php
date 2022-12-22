@@ -12,6 +12,21 @@
 				return false;
 			}
 		}
-
+		function select_user($data)
+		{
+			$condition = [
+				"username"=>$data["username"],
+				"password"=>$data["password"]
+			];
+			$this->db->select("*");
+			$this->db->from("user");
+			$this->db->where($condition);
+			$check = $this->db->get()->result();
+			if(count($check)>0) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 ?>

@@ -63,7 +63,7 @@
               <br><br><h4 class="profile-title"><?php echo count($division_data); ?></h4>
               <p>Division</p>
             </div>
-            <div class="col"><br><img src="/assets/img/achievement.png" style="float:center;">
+            <div class="col"><br><img src="assets/img/achievement.png" style="float:center;">
               <br><br><h4 class="profile-title">100+</h4>
               <p>Achievement</p>
             </div>
