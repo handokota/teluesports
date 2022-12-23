@@ -251,17 +251,7 @@
     </div>
  
     </section>
-    <footer>
-      <div class="footer">
-        <div class="footer-logo">
-          <img src="assets/img/logo.png">
-          <!-- <p>#GAMEON</p> -->
-        </div>
-        <!-- <br> -->
-        <p class="copyright">&copy 2022 TELU ESPORTS</p>
-        <!-- <br> -->
-      </div>
-    </footer>
+    <?php $this->load->view('footer'); ?>
     <div id="modal_group">
     </div>
 
@@ -362,7 +352,7 @@
 
                                     '<div class="modal-dialog text-center"> '+
                                         '<div class="modal-content bg-dark rounded"> '+
-                                        '<div class="modal-header"> '+
+                                        '<div class="modal-header" style="border: none;"> '+
                                             '<h5 class="modal-title" id="exampleModalLabel">Edit '+division+'?</h5> '+
                                             '<button type="button" class="btn btn-close btn-outline-success" data-bs-dismiss="modal" aria-label="Close"></button> '+
                                             
@@ -383,7 +373,7 @@
                                                     '</div> '+
                                                     '<div class="mb-3"> '+
                                                         '<label for="exampleFormControlInput1" class="form-label">Image</label> '+
-                                                        '<img src="<?php echo base_url('assets/uploads/divisions/'); ?>'+ image +'.png" class="card-img-top" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)"> '+
+                                                        '<img src="<?php echo base_url('assets/uploads/divisions/'); ?>'+ image +'.png" class="card-img-top mb-3" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)"> '+
                                                         '<input type="file" class="form-control" name="division_image" id="division_image" accept="image/png"> '+
                                                     '</div> '+
                                                     '<div class="text-center"> '+
