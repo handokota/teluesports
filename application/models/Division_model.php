@@ -1,8 +1,7 @@
 <?php 
 	defined('BASEPATH') OR exit('No direct script access alowed');
 
-	class Division_model extends CI_Model 
-	{
+	class Division_model extends CI_Model {
         public function get_division(){
 			$this->db->select('*');
             $this->db->from('division');
@@ -25,6 +24,7 @@
 				return false;
 			}
 		}
+		
 		public function cek_division($name){
 			$this->db->select("*");
 			$this->db->from("division");

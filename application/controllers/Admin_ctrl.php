@@ -17,6 +17,7 @@ class Admin_ctrl extends CI_Controller {
 			redirect("Homepage_ctrl");
 		}
 	}
+	
 	public function getAllDivision(){
 		$this->db->select('*');
 		$this->db->from('division');
@@ -26,9 +27,9 @@ class Admin_ctrl extends CI_Controller {
 		echo json_encode($data);
 		exit;
 	}
+
 	public function delete($id) {
 		if($this->Division_model->delete_division($id)) {
-			
 			redirect('/Admin_ctrl');
 		} else {
 			$data["error_message"] = "Gagal Hapus"; 

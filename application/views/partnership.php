@@ -9,7 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="assets/css/style.css"/> -->
-    <script src="assets/js/script.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <script src="assets/js/script.js" type="text/javascript"></script> -->
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel=“stylesheet” type='text/css'>
     <title>TelU Esports</title>
     <style>
@@ -157,24 +158,24 @@
         <h1 class="partnership-title" style="margin-top: 50px; margin-bottom: 100px; font-size: 50px; font-style: italic; font-weight: bold; color: #00917A;">COLABORATION & PARTNERSHIP</h1>
         <div class="container">
           <div class="row text-center mb-5" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px;">
-            <div class="col" style="flex: 1; text-align: left;";>
+            <div class="telkomsel col" style="flex: 1; text-align: left;";>
               <img src="assets/img/partnership/telkomsel.png">
             </div>
-            <div class="col" style="flex: 1; text-align: right;">
+            <div class="biznet col" style="flex: 1; text-align: right;">
               <img src="assets/img/partnership/biznet.png">
             </div>
           </div>
           <div class="row text-center" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px; margin-bottom: 100px;">
-            <div class="col" style="flex: 1; text-align: center;">
+            <div class="moonton col" style="flex: 1; text-align: center;">
               <img src="assets/img/partnership/moonton.png">
             </div>
-            <div class="col" style="flex: 1; text-align: center;">
+            <div class="dracoo col" style="flex: 1; text-align: center;">
               <img src="assets/img/partnership/dracoo.png">
             </div>
-            <div class="col" style="flex: 1; text-align: center;">
+            <div class="jawara col" style="flex: 1; text-align: center;">
               <img src="assets/img/partnership/jawara.png">
             </div>
-            <div class="text-center" style="margin-top: 100px;">
+            <div class="submit text-center" style="margin-top: 100px;">
                 <a href="<?php echo base_url('/Partner_ctrl'); ?>" class="btn btn-primary btn-lg" style="width: auto; padding: 14px; border-radius: 50px;">Become a partner</a>
             </div>
           </div>
@@ -182,5 +183,13 @@
 			</div>
     </section>
     <?php $this->load->view('footer'); ?>
-  </body>
+    <script>
+      ScrollReveal().reveal('.telkomsel', { delay: 500, duration: 2000 });
+      ScrollReveal().reveal('.biznet', { delay: 1000, duration: 2000 });
+      ScrollReveal().reveal('.moonton', { delay: 1500, duration: 2000 });
+      ScrollReveal().reveal('.dracoo', { delay: 2000, duration: 2000 });
+      ScrollReveal().reveal('.jawara', { delay: 2500, duration: 2000 });
+      ScrollReveal().reveal('.submit', { delay: 3000, duration: 2000 });
+    </script>  
+</body>
 </html>

@@ -17,7 +17,12 @@ class Admin_member_ctrl extends CI_Controller {
 		}
 	}
 
-        
-
-
+	public function delete($id) {
+		if($this->User_model->delete_user($id)) {
+			redirect('/Admin_member_ctrl');
+		} else {
+			$data["error_message"] = "Gagal Hapus"; 
+			$this->load->view('submenu/admin_member', $data);
+		}
+	}
 }

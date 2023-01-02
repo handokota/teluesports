@@ -268,7 +268,7 @@
                                 "<td>"+fullname+"</td> "+
                                 "<td>"+username+"</td> "+
                                 "<td>"+divisi+"</td> "+
-                                "<td><img class='img img-fluid m-2 rounded' style='max-width: 20%;' src='<?php echo base_url('assets/uploads/user/'); ?>KTM_"+image+"'></td> "+
+                                "<td><img class='img img-fluid m-2 rounded' style='max-width: 40px;' src='<?php echo base_url('assets/uploads/user/'); ?>KTM_"+image+"'></td> "+
                                 "<td>"+create+"</td> "+
                                 "<td><button data-bs-toggle='modal' data-bs-target='#deleteModal"+id+"' class='btn btn-danger'><i class='fa-solid fa-trash'></i></button></td> "+
                             "</tr> ";
@@ -285,7 +285,7 @@
                                             
                                         '</div> '+
                                         '<div class="modal-body"> '+
-                                            '<a class="btn btn-danger" href="<?php echo base_url("/Admin_ctrl/delete/") ?>'+id+'">Yes, delete</a> '+
+                                            '<a class="btn btn-danger" href="<?php echo base_url("/Admin_member_ctrl/delete/") ?>'+id+'">Yes, delete</a> '+
                                         '</div> '+
                                         '</div> '+
                                     '</div> '+
