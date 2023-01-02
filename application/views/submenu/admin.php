@@ -183,6 +183,15 @@
             transition: 0.5s;
             background-color: #006655;
         }
+
+        .modal .modal-body input.form-control {
+            background-color: #1A1D20;
+            color: #ffffff;
+            border-color: #00917A;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+        
     </style>
 </head>
 <body>
