@@ -175,7 +175,7 @@
             <div class="jawara col" style="flex: 1; text-align: center;">
               <img src="assets/img/partnership/jawara.png">
             </div>
-            <div class="submit text-center" style="margin-top: 100px;">
+            <div class="text-center" style="margin-top: 100px;">
                 <a href="<?php echo base_url('/Partner_ctrl'); ?>" class="btn btn-primary btn-lg" style="width: auto; padding: 14px; border-radius: 50px;">Become a partner</a>
             </div>
           </div>
@@ -189,7 +189,6 @@
       ScrollReveal().reveal('.moonton', { delay: 1500, duration: 2000 });
       ScrollReveal().reveal('.dracoo', { delay: 2000, duration: 2000 });
       ScrollReveal().reveal('.jawara', { delay: 2500, duration: 2000 });
-      ScrollReveal().reveal('.submit', { delay: 3000, duration: 2000 });
     </script>  
 </body>
 </html>
