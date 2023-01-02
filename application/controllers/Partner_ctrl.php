@@ -13,7 +13,6 @@ class Partner_ctrl extends CI_Controller {
 		$this->load->view('submenu/partner', $data);
 	}
 
-
 	public function sendMail() {
 		if(isset($_POST['submit_email'])) {
 			$email = $this->input->post('email');
