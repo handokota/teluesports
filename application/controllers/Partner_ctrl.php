@@ -34,8 +34,8 @@ class Partner_ctrl extends CI_Controller {
 				$this->load->library('email', $config);
 				$this->email->initialize($config);
 
-				$this->email->from('handtejoatmoko@gmail.com');
-				$this->email->to($email);
+				$this->email->from($email);
+				$this->email->to('handtejoatmoko@gmail.com');
 				$this->email->subject($subject);
 				$this->email->message($message);
 
