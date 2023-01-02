@@ -15,12 +15,16 @@
     <style>
         .table-calendar table tbody tr td a{
             color:#00917A !important;
-            font-weight:bold !important;
+            /* font-weight:bold !important; */
             cursor: text !important;
         }
         
         .table-calendar table tbody tr td{
             padding:16px !important;
+        }
+
+        .table-calendar {
+            box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
         }
 
         * {
@@ -146,12 +150,12 @@
             font-size: 18px;
         }
 
-        .news button {
+        .news .btn {
             text-align: center;
-            /* padding: 14px; */
+            padding: 14px;
             cursor: pointer;
             border: none;
-            height: 50px;
+            /* height: 50px; */
         }
 
         .oprec {
@@ -161,6 +165,10 @@
             width: 180px;
             font-size: 16px;
             /* margin-left: 5px; */
+        }
+
+        .news .oprec:hover, .news .oprec:active {
+          background-color: #006655 !important;
         }
 
         .home-divisions {
@@ -253,7 +261,7 @@
         <h4 class="telu-esports">TEL-U ESPORTS</h4>
         <p class="news-title">BE ONE OF US!!! OPEN STAFF RECRUITMENTS</p>
         <p class="news-content">Are you the next Tel-U Esports staff? Ada kabar baik nih untuk kalian karena Tel-U Esports membuka proses rekruitasi lagi loh! Kali ini bukan lagi rekruitasi anggota melainkan bagian kepengurusan tahun selanjutnya. Kalian yang merasa punya dedikasi tinggi dan ingin memajukan nama Esports Telkom University bisa banget join nih.</p>
-        <button class="oprec">Registration here</button>
+        <a href="https://www.youtube.com/@TELUESPORTS" target="_blank" class="btn oprec">Registration here</a>
       <!-- </div> -->
     </section>
     <section class="home-divisions">
@@ -280,7 +288,7 @@
         <h1 class="event-title">EVENT NOW ON TEL-U ESPORTS</h1>
         <div class="row">
           <div class="col-lg-3 col-md-6 col-sm-4">
-            <div class="table-calendar">
+            <div class="table-calendar bg-dark p-3" style="border-radius: 20px;">
               <?php 
                   $prefs = array(
                     'start_day' => 'monday',

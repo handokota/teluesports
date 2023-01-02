@@ -115,6 +115,38 @@
         .partnership img {
             max-width: 100%;
         }
+
+        .form-partner .card {
+            background-color: transparent;
+            /* border: none; */
+            /* box-shadow: 0 5px 10px rgba(0,0,0,.2) !important; */
+        }
+
+        .form-partner input.form-control {
+            background-color: #005345;
+            color: #ffffff;
+            border-color: #00917A;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        .form-partner input.form-check-input {
+            background-color: #005345;
+            border-color: #00917A;
+        }
+
+        .btn-primary {
+            background-color: #00917A;
+            border: none;
+            width: 120px;
+            font-size: 16px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
+        }
+
+        .btn-primary:hover, .btn-primary:active {
+            transition: 0.5s;
+            background-color: #006655 !important;
+        }
     </style>
 </head>
 <body>
@@ -122,7 +154,7 @@
     <section class="partnership" style="margin-left: 5%; margin-right: 5%; text-align: center; margin-bottom: 50px;">
       <div class="container">
         <p class="partnership-page" style="margin-top: 50px;">Home > <a style="color:#00917A;">Partnership</a></p> 
-        <h1 class="partnership-title" style="margin-top: 50px; margin-bottom: 50px; font-size: 50px; font-style: italic; font-weight: bold; color: #00917A;">COLABORATION & PARTNERSHIP</h1>
+        <h1 class="partnership-title" style="margin-top: 50px; margin-bottom: 100px; font-size: 50px; font-style: italic; font-weight: bold; color: #00917A;">COLABORATION & PARTNERSHIP</h1>
         <div class="container">
           <div class="row text-center mb-5" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px;">
             <div class="col" style="flex: 1; text-align: left;";>
@@ -132,7 +164,7 @@
               <img src="assets/img/partnership/biznet.png">
             </div>
           </div>
-          <div class="row text-center" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px;">
+          <div class="row text-center" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px; margin-bottom: 100px;">
             <div class="col" style="flex: 1; text-align: center;">
               <img src="assets/img/partnership/moonton.png">
             </div>
@@ -141,6 +173,9 @@
             </div>
             <div class="col" style="flex: 1; text-align: center;">
               <img src="assets/img/partnership/jawara.png">
+            </div>
+            <div class="text-center" style="margin-top: 100px;">
+                <a href="<?php echo base_url('/Partner_ctrl'); ?>" class="btn btn-primary btn-lg" style="width: auto; padding: 14px; border-radius: 50px;">Become a partner</a>
             </div>
           </div>
         </div>

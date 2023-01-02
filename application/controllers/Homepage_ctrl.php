@@ -30,4 +30,11 @@ class Homepage_ctrl extends CI_Controller {
 		}
 
 	}
+
+	public function signout ()
+	{
+		$this->session->unset_userdata("username");
+		redirect("/");
+		
+	}
 }

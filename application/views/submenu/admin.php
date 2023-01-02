@@ -193,6 +193,11 @@
         <h1 class="divisions-title text-center">DIVISIONS</h1>
         <p class="divisions-content text-center mb-5">Tel-U Esports memiliki 3 divisi terbesar saat ini yaitu PUBG Mobile, Valorant, dan Mobile Legends.</p>
         <!-- Button trigger modal -->
+        <?php 
+            if(isset($gagal)) {
+                echo '<p class="divisions-content text-center mb-5">'.$gagal.'</p>';
+            }
+        ?>
         <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#createModal" style="width:auto;">
         Create Division
         </button>
@@ -373,7 +378,7 @@
                                                     '</div> '+
                                                     '<div class="mb-3"> '+
                                                         '<label for="exampleFormControlInput1" class="form-label">Image</label> '+
-                                                        '<img src="<?php echo base_url('assets/uploads/divisions/'); ?>'+ image +'.png" class="card-img-top mb-3" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)"> '+
+                                                        '<img src="<?php echo base_url('assets/uploads/divisions/'); ?>'+ image +'" class="card-img-top mb-3" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)"> '+
                                                         '<input type="file" class="form-control" name="division_image" id="division_image" accept="image/png"> '+
                                                     '</div> '+
                                                     '<div class="text-center"> '+

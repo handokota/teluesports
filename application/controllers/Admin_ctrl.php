@@ -39,7 +39,7 @@ class Admin_ctrl extends CI_Controller {
 	public function inputData()
     {
         if($this->Division_model->cek_division($this->input->post("division_name"))){
-			$imageURL = substr(md5(uniqid(mt_rand(), true)), 0, 30);
+			$imageURL = substr(md5(uniqid(mt_rand(), true)), 0, 30)."_".$_FILES['division_image']['name'];
 			$initialize = $this->upload->initialize(array(
 				"upload_path" => './assets/uploads/divisions/',
 				"allowed_types" => 'png',
@@ -81,13 +81,13 @@ class Admin_ctrl extends CI_Controller {
     }
 	public function editData($id)
     {
-		if ($this->input->post("division_image") != null){
+		if (!empty($_FILES['division_image']['name'])){
 			//upload file and edit data
-			if($this->Division_model->cek_division($this->input->post("division_name"))){
-				$imageURL = substr(md5(uniqid(mt_rand(), true)), 0, 30);
+			if($this->Division_model->cek_division($this->input->post("division_name"))) {
+				$imageURL = substr(md5(uniqid(mt_rand(), true)), 0, 30)."_".$_FILES['division_image']['name'];
 				$initialize = $this->upload->initialize(array(
 					"upload_path" => './assets/uploads/divisions/',
-					"allowed_types" => 'png',
+					"allowed_types" => 'png|jpg|jpeg',
 					"max_size" => 10000,
 					"remove_spaces" => TRUE,
 					"file_name" => $imageURL
@@ -105,10 +105,8 @@ class Admin_ctrl extends CI_Controller {
 					$this->index();
 					$this->load->view('submenu/admin', $data);
 				} else {
-					if($this->Division_model->edit_division($data, $id)){
-					
-						redirect('/');
-			
+					if($this->Division_model->edit_division($data, $id)) {
+						redirect('Admin_ctrl');
 					} else {
 						$data['gagal'] = "Gagal menambahkan Divisi";
 						$this->index();

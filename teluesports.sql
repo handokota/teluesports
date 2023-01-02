@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2022 at 03:10 AM
+-- Generation Time: Dec 27, 2022 at 12:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -42,9 +42,10 @@ CREATE TABLE `division` (
 --
 
 INSERT INTO `division` (`id`, `division_name`, `division_achievement`, `division_requirement`, `division_image`, `division_create_at`, `division_update_at`) VALUES
-(1, 'PUBG MOBILE', '• Grand Finalist PUBG Mobile Campus Championship (PMCC) 2019<br>• Juara 1 Indonesia Esports League (IEL) Season 3<br>• Grand Finalist Liga Mahasiswa 2021', '• Mahasiswa aktif Telkom University<br>• Memahami game PUBG Mobile dan memiliki jiwa yang kompetitif<br>• Setuju dengan syarat dan ketentuan yang telah di tentukan oleh UKM', 'pubg', '2022-12-13 07:52:14', '2022-12-22 03:22:03'),
-(2, 'VALORANT', '• PVP Esports Campus International Championship<br>• PVP Esports Campus Championship Indonesia Qualifier<br>• WeKa Style - PERAGA E-SPORT 2020 FIK', '• Mahasiswa aktif Telkom University<br>• Memahami game Valorant dan memiliki jiwa yang kompetitif<br>• Setuju dengan syarat dan ketentuan yang telah di tentukan oleh UKM', 'valorant', '2022-12-13 07:52:14', '2022-12-22 03:22:13'),
-(3, 'MOBILE LEGENDS', '• MLCC Favourite Team 2019<br>• MLCC West Java Region Finalist<br>• PIALA MENPORA ESPORTS 2020 (6th Place)<br>• Telkom University - ESPORTS EXHIBITION GemasTIK XIII (Juara 2)', '• Mahasiswa aktif Telkom University<br>• Memahami game Mobile Legends dan memiliki jiwa yang kompetitif<br>• Setuju dengan syarat dan ketentuan yang telah di tentukan oleh UKM', 'ml', '2022-12-13 07:54:54', '2022-12-22 03:22:22');
+(1, 'PUBG MOBILE', '• Grand Finalist PUBG Mobile Campus Championship (PMCC) 2019<br>• Juara 1 Indonesia Esports League (IEL) Season 3<br>• Grand Finalist Liga Mahasiswa 2021', '• Mahasiswa aktif Telkom University<br>• Memahami game PUBG Mobile dan memiliki jiwa yang kompetitif<br>• Setuju dengan syarat dan ketentuan yang telah di tentukan oleh UKM', 'pubg.png', '2022-12-13 07:52:14', '2022-12-22 03:22:03'),
+(2, 'VALORANT', '• PVP Esports Campus International Championship<br>• PVP Esports Campus Championship Indonesia Qualifier<br>• WeKa Style - PERAGA E-SPORT 2020 FIK', '• Mahasiswa aktif Telkom University<br>• Memahami game Valorant dan memiliki jiwa yang kompetitif<br>• Setuju dengan syarat dan ketentuan yang telah di tentukan oleh UKM', 'valorant.png', '2022-12-13 07:52:14', '2022-12-22 03:22:13'),
+(3, 'MOBILE LEGENDS', '• MLCC Favourite Team 2019<br>• MLCC West Java Region Finalist<br>• PIALA MENPORA ESPORTS 2020 (6th Place)<br>• Telkom University - ESPORTS EXHIBITION GemasTIK XIII (Juara 2)', '• Mahasiswa aktif Telkom University<br>• Memahami game Mobile Legends dan memiliki jiwa yang kompetitif<br>• Setuju dengan syarat dan ketentuan yang telah di tentukan oleh UKM', 'ml.png', '2022-12-13 07:54:54', '2022-12-27 07:55:28'),
+(20, 'F', 'F', 'FS', 'pubg.png', '2022-12-13 07:54:54', '2022-12-27 08:12:26');
 
 -- --------------------------------------------------------
 
@@ -113,7 +114,10 @@ INSERT INTO `user` (`id`, `fname`, `lname`, `username`, `password`, `division`, 
 (2, 'Bel', 'Chef', 'chfrll', '123', 'PUBG MOBILE', '6a927c7c0ff3ee9db6cad6b4c55350', '2022-12-13 11:01:23'),
 (3, 'salsa', 'zakkiya', 'salsazakkiya', '123', 'PUBG MOBILE', 'cc4d2a770199ca751da94ce160f9cd', '2022-12-13 12:45:03'),
 (5, 'handoko', 'tejo', 'handokota', '123', 'PUBG Mobile', 'e9069306f5f3f76a9ea70fd84df616', '2022-12-17 07:25:24'),
-(6, 'admin', '123', 'admin', '123', 'PUBG Mobile', '67a41c8e821a1372fa8ae75ebc224f', '2022-12-17 07:38:46');
+(6, 'admin', '123', 'admin', '123', 'PUBG Mobile', '67a41c8e821a1372fa8ae75ebc224f', '2022-12-17 07:38:46'),
+(7, 'Bel', 'inda', 'belll', '12345', 'MOBILE LEGENDS', 'a81e5e40d5000b07a76b35c2796852_ml.png', '2022-12-27 08:35:22'),
+(8, 'be', 'be', 'belinda', '123', 'VALORANT', '427544579f8f417cdfbfb75cfb8460_ml.png', '2022-12-27 08:49:19'),
+(9, 'Belnda', 'bellll', 'belindaaa', '12345', 'VALORANT', '477b78d5af04376137288b3471dacb_pubg1.png', '2022-12-27 08:50:17');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +155,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `division`
 --
 ALTER TABLE `division`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `event`
@@ -169,7 +173,7 @@ ALTER TABLE `partnership`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

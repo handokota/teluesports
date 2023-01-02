@@ -144,9 +144,9 @@
             box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:active {
             transition: 0.5s;
-            background-color: #006655;
+            background-color: #006655 !important;
         }
 
         .divisions-page {
@@ -184,7 +184,7 @@
                     <div class="card-body p-4 p-md-5">
                     <h3 class="text-center" style="font-weight: bold;">Open Registration Member for Division</h3>
                     <h5 class="mb-4 pb-2 pb-md-3 mb-md-5 text-center">Become One of Us</h5>
-                    <form method = "POST" action="'; echo base_url('/Member_ctrl/inputData') ; echo'" enctype="multipart/form-data"> <!--tambahin di controller-->
+                    <form method="post" action="'; echo base_url('/Member_ctrl/inputData') ; echo'" enctype="multipart/form-data">
                       <input hidden name="division" value="'. $div['division_name'].'">
                       <div class="row">
                         <div class="col-md-6 mb-4">
@@ -201,25 +201,25 @@
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-12 mb-4 pb-2">
+                        <div class="col-md-12 mb-4">
                           <div class="form-outline">
                             <label class="form-label" for="inlineFormInputGroupUsername">Username</label>
                             <input type="text" id="username" class="form-control form-control-lg" name="username"/>
                           </div>
                         </div>
-                        <div class="col-md-12 mb-4 pb-2">
+                        <div class="col-md-12 mb-4">
                           <div class="form-outline">
                             <label class="form-label" for="password">Password</label>
                             <input type="password" id="password" class="form-control form-control-lg" name="password"/>
                           </div>
                         </div>
-                        <div class="col-md-12 mb-4 pb-2">
+                        <div class="col-md-12 mb-4">
                           <div class="form-outline">
                             <label class="mb-2 pb-1">Division</label>
                             <p class="mb-0" style="font-weight: bold;">'.$div['division_name'].'</p>
                           </div>
                         </div>
-                        <div class="col-md-12 mb-4 pb-2">
+                        <div class="col-md-12 mb-4">
                           <div class="form-outline">
                             <label class="mb-2 pb-1">Upload KTM</label><br>
                             <input type="file" class="form-control-file" id="exampleFormControlFile1" name="inputFile">

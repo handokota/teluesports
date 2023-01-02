@@ -168,9 +168,9 @@
             box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:active {
             transition: 0.5s;
-            background-color: #006655;
+            background-color: #006655 !important;
         }
     </style>
 </head>
@@ -187,7 +187,7 @@
             echo'
             <div class="card border-0">
                 <div class="division">
-                    <img src="'.base_url('assets/uploads/divisions/').$division['division_image'].'.png" class="card-img-top" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)">
+                    <img src="'.base_url('assets/uploads/divisions/').$division['division_image'].'" class="card-img-top" alt="..." style="border-top-left-radius: 20px; border-top-right-radius: 20px; box-shadow: 0 5px 10px rgba(0,0,0,.2)">
                     <div class="card-body" style="background-color: #004b3e;color: white;">
                       <h3 class="card-title">'.$division['division_name'].'</h3>
                       <br>
@@ -197,7 +197,7 @@
                       <p><b>REQUIREMENTS</b></p>
                       <p class="card-text">'.$division['division_requirement'].'</p>
                       <form action="'; echo base_url('/Divisions_ctrl/open_member/').$division['id'] ; echo'" method ="post" >
-                      <button type="submit" class="btn btn-primary" >Join</button>
+                        <button type="submit" class="btn btn-primary">Join</button>
                       </form>
                     </div>
                 </div>

@@ -19,39 +19,57 @@ class Member_ctrl extends CI_Controller {
 
     public function inputData()
     {
-        $imageURL = substr(md5(uniqid(mt_rand(), true)), 0, 30);
+        $imageURL = substr(md5(uniqid(mt_rand(), true)), 0, 30)."_".$_FILES['inputFile']['name'];
         $initialize = $this->upload->initialize(array(
             "upload_path" => './assets/uploads/user/',
-            "allowed_types" => 'jpg',
+            "allowed_types" => 'jpg|png|jpeg',
             "max_size" => 10000,
             "remove_spaces" => TRUE,
             "file_name" => 'KTM_' . $imageURL
         ));
 
-        $data = array(
-            "fname" => $this->input->post('fname'),
-            "lname" => $this->input->post('lname'),
-            "username" => $this->input->post('username'),
-            "password" => $this->input->post('password'),
-            "division" => $this->input->post('division'),
-            "file_url" => $imageURL,
-            "create_at" => date('Y-m-d h:i:s')
-        );
-        if (!$this->upload->do_upload('inputFile')) {
-            $data['gagal'] = "Ukuran file terlalu besar atau jenis file bukan jpg!";
+        $this->form_validation->set_rules('fname', 'trim|required|min_length[3]|max_length[50]');
+        $this->form_validation->set_rules('lname', 'trim|required|min_length[3]|max_length[50]');
+        $this->form_validation->set_rules('username', 'trim|required|min_length[3]|max_length[50]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[50]');
+        
+
+        if ($this->form_validation->run() == FALSE)
+        {
+            $data['gagal'] = "Mohon maaf anda gagal melakukan registrasi.";
             $this->index();
             $this->load->view('submenu/member', $data);
-        } else {
-            if($this->User_model->insert_user($data)){
-            
-                redirect('/Homepage_ctrl');
-    
-            } else {
-                $data['gagal'] = "Mohon anda gagal melakukan registrasi.";
+        }
+        else
+        {
+            $data = array(
+                "fname" => $this->input->post('fname'),
+                "lname" => $this->input->post('lname'),
+                "username" => $this->input->post('username'),
+                "password" => $this->input->post('password'),
+                "division" => $this->input->post('division'),
+                "file_url" => $imageURL,
+                "create_at" => date('Y-m-d h:i:s')
+            );
+            if (!$this->upload->do_upload('inputFile')) {
+                $data['gagal'] = "Ukuran file terlalu besar atau jenis file bukan jpg!";
                 $this->index();
-                $this->load->view('submenu/member', $data);   
+                $this->load->view('submenu/member', $data);
+            } else {
+                
+                if($this->User_model->insert_user($data)){
+                
+                    redirect('/Homepage_ctrl');
+        
+                } else {
+                    $data['gagal'] = "Mohon anda gagal melakukan registrasi.";
+                    $this->index();
+                    $this->load->view('submenu/member', $data);   
+                }
             }
         }
+
+        
         
     }
 }

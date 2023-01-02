@@ -40,7 +40,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
           <!-- Content -->
           <div class="footer-logo">
-            <img src="assets/img/logo.png">
+            <a href="<?php echo base_url('/Homepage_ctrl'); ?>"><img src="assets/img/logo.png"></a>
             <h5 class="fw-bold mt-3">#GAMEON</h5>
           </div>
           <!-- <h6 class="text-uppercase fw-bold mb-4">
@@ -92,7 +92,7 @@
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
           <h5 class="text-uppercase fw-bold mb-4" style="color: #00917A;">CONTACT</h5>
-          <p><i class="fas fa-home me-3"></i>Jl. Telekomunikasi, Dayeuhkolot, Bandung 40257</p>
+          <p><i class="fas fa-home me-3"></i>Jl. Telekomunikasi Terusan Buah Batu, Bandung - 40257, Indonesia</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
             teluesports@gmail.com

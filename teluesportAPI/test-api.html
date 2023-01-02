@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test API</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+
+<body class="bg-secondary">
+    <div class="container bg-white shadow rounded mt-5 mb-5 p-4" style="max-width: 650px">
+        <h2 class="mb-3">Test API</h2>
+
+        <button class="btn btn-secondary" onclick="get_users()">Get all users</button>
+        <button class="btn btn-secondary" onclick="get_user_by_id()">Get user by id</button>
+        <button class="btn btn-secondary" onclick="insert_user()">Insert user</button>
+        <button class="btn btn-secondary" onclick="update_user()">Update user</button>
+        <button class="btn btn-secondary" onclick="delete_user()">Delete user</button><br>
+
+        <div id="find" style="display: none">
+            <br>
+            <div class="form-group" style="width: 500px">
+                <label>ID</label>
+                <input type="text" class="form-control" id="id_find">
+            </div>
+            <button type="submit" class="btn btn-secondary" onclick="button_find()">Find</button>
+        </div>
+
+        <div id="insert" style="display: none">
+            <br>
+            <div class="form-group" style="width: 500px">
+                <label>Nama</label>
+                <input type="text" class="form-control" id="nama">
+            </div>
+            <div class="form-group" style="width: 500px">
+                <label>Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group" style="width: 500px">
+                <label>Jurusan</label>
+                <input type="text" class="form-control" id="jurusan">
+            </div>
+            <button type="submit" class="btn btn-secondary" onclick="button_tambah()">Insert</button>
+        </div>
+
+        <div id="update" style="display: none">
+            <br>
+            <div class="form-group" style="width: 500px">
+                <label>ID</label>
+                <input type="text" class="form-control" id="id_update">
+            </div>
+            <div class="form-group" style="width: 500px">
+                <label>Nama</label>
+                <input type="text" class="form-control" id="nama_update">
+            </div>
+            <div class="form-group" style="width: 500px">
+                <label>Email</label>
+                <input type="email" class="form-control" id="email_update">
+            </div>
+            <div class="form-group" style="width: 500px">
+                <label>Jurusan</label>
+                <input type="text" class="form-control" id="jurusan_update">
+            </div>
+            <button type="submit" class="btn btn-secondary" onclick="button_update()">Update</button>
+        </div>
+
+        <div id="delete" style="display: none">
+            <br>
+            <div class="form-group" style="width: 500px">
+                <label>ID</label>
+                <input type="text" class="form-control" id="id_delete">
+            </div>
+            <button type="submit" class="btn btn-secondary" onclick="button_delete()">Delete</button>
+        </div>
+
+        <div id="isi_html"></div>
+        <div id="console"></div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <script>
+        const baseURL = "http://localhost:3000"
+
+        function get_users() {
+            document.getElementById("find").style.display = "none"
+            document.getElementById("insert").style.display = "none"
+            document.getElementById("update").style.display = "none"
+            document.getElementById("delete").style.display = "none"
+
+            get_all_users()
+        }
+
+        function get_all_users() {
+            $.getJSON(baseURL + "/getAllMahasiswa", (data) => {
+                console.log(data)
+
+                display = "<table class='mt-4 table'><thead><tr><th>ID</th><th>Nama</th><th>Email</th><th>Jurusan</th></tr></thead><tbody>"
+                data.data.forEach(function(value) {
+                    display = display + "<tr><td>" + value.id + "</td>" +
+                        "<td>" + value.nama + "</td>" +
+                        "<td>" + value.email + "</td>" +
+                        "<td>" + value.jurusan + "</td></tr>"
+                })
+
+                display = display + "</tbody></table>"
+
+                document.getElementById("console").innerHTML = display
+            })
+        }
+
+        function get_user_by_id() {
+            document.getElementById("find").style.display = "initial"
+            document.getElementById("insert").style.display = "none"
+            document.getElementById("update").style.display = "none"
+            document.getElementById("delete").style.display = "none"
+        }
+
+        function button_find() {
+            var id = document.getElementById("id_find").value
+
+            $.getJSON(baseURL + "/getMahasiswa/" + id, (data) => {
+                console.log(data)
+
+                display = "<table class='mt-4 table'><thead><tr><th>ID</th><th>Nama</th><th>Email</th><th>Jurusan</th></tr></thead><tbody>"
+                data.data.forEach(function(value) {
+                    display = display + "<tr><td>" + value.id + "</td>" +
+                        "<td>" + value.nama + "</td>" +
+                        "<td>" + value.email + "</td>" +
+                        "<td>" + value.jurusan + "</td></tr>"
+                })
+
+                display = display + "</tbody></table>"
+
+                document.getElementById("console").innerHTML = display
+            })
+        }
+
+        function insert_user() {
+            document.getElementById("find").style.display = "none"
+            document.getElementById("insert").style.display = "initial"
+            document.getElementById("update").style.display = "none"
+            document.getElementById("delete").style.display = "none"
+        }
+
+        function button_tambah() {
+            const data = {}
+            data.nama = document.getElementById("nama").value
+            data.email = document.getElementById("email").value
+            data.jurusan = document.getElementById("jurusan").value
+
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/insertMahasiswa",
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json"
+            }).done(function(response) {
+                alert("Insert success!")
+                get_all_users()
+            }).fail(function(response) {
+                alert('Error: ' + response)
+            })
+        }
+
+        function update_user() {
+            get_all_users()
+
+            document.getElementById("find").style.display = "none"
+            document.getElementById("insert").style.display = "none"
+            document.getElementById("update").style.display = "initial"
+            document.getElementById("delete").style.display = "none"
+        }
+
+        function button_update() {
+            id = document.getElementById("id_update").value
+
+            const data = {}
+            data.nama = document.getElementById("nama_update").value
+            data.email = document.getElementById("email_update").value
+            data.jurusan = document.getElementById("jurusan_update").value
+
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/updateMahasiswa/" + id,
+                data: JSON.stringify(data),
+                contentType: "application/json",
+                dataType: "json"
+            }).done(function(response) {
+                alert("Update success!")
+                get_all_users()
+            }).fail(function(response) {
+                alert('Error: ' + response.sqlMessage)
+            })
+        }
+
+        function delete_user() {
+            get_all_users()
+
+            document.getElementById("find").style.display = "none"
+            document.getElementById("insert").style.display = "none"
+            document.getElementById("update").style.display = "none"
+            document.getElementById("delete").style.display = "initial"
+        }
+
+        function button_delete() {
+            id = document.getElementById("id_delete").value
+
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/deleteMahasiswa/" + id,
+                contentType: "application/json",
+                dataType: "json"
+            }).done(function(response) {
+                alert("Delete success!")
+                get_all_users()
+            }).fail(function(response) {
+                alert('Error: ' + response.sqlMessage)
+            })
+        }
+    </script>
+</body>
+
+</html>

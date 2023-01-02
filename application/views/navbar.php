@@ -1,30 +1,129 @@
 <style>
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* padding: 20px 50px; */
+        color: #ffffff;
+        font-family: Poppins !important;
+        margin-top: 20px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+    }
+
+    .nav-links a:active {
+        color: #00917A;
+    }
+
+    .navbar-brand {
+        position: relative;
+        width: 50px;
+    }
+
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 16px;
+    }
+
+    .nav-links a:hover {
+        color: #00917A;
+        transition: 0.5s;
+    }
+
     .active {
         color: #00917A;
     }
+    
+    .menu li {
+        padding: 10px;
+        text-align: center;
+        width: 120px;
+        /* background-color: #00917A;
+        border-radius: 5px; */
+    }
+
+    .menu button {
+        text-align: center;
+        /* padding: 14px; */
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        color: #ffffff;
+    }
+
+    .btn-primary {
+        background-color: #00917A;
+        border: none;
+        width: 120px;
+        font-size: 16px;
+        box-shadow: 0 5px 10px rgba(0,0,0,.2) !important;
+    }
+
+    .btn-primary:hover {
+        transition: 0.5s;
+        background-color: #006655;
+    }
+
+    .btn-primary:hover, .btn-primary:active {
+        transition: 0.5s;
+        background-color: #006655 !important;
+    }
+
+    .btn-close:active {
+        background-color: #8b0000 !important;
+    }
+
+    .login .form-group input.form-control {
+        background-color: #1A1D20;
+        color: #ffffff;
+        border-color: #00917A;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
 </style>
 <nav class="navbar">
-  <a href="homepage.html"><img class="navbar-brand" src="assets/img/logo.png" alt="logo"></a>
+  <a href="<?php echo base_url('/Homepage_ctrl'); ?>"><img class="navbar-brand" src="assets/img/logo.png" alt="logo"></a>
   <ul class="nav-links">
     <div class="menu">
       <li><a href="<?php echo base_url('/Homepage_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='homepage'){echo'active';}?>">Home</a></li>
       <li><a href="<?php echo base_url('/Divisions_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='division'){echo'active';}?>">Divisions</a></li>
+      <!-- <li><a href="<?php echo base_url('/Admin_member_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='member'){echo'active';}?>">Member</a></li> -->
       <li><a href="<?php echo base_url('/Partnership_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='partnership'){echo'active';}?>">Partnership</a></li>
       <?php 		
         if($this->session->has_userdata("username")) {
           echo '<li><a href="'; echo base_url('/Event_ctrl'); echo'" class="'; if($this->session->userdata('active_nav')=='event'){echo'active';}echo'">Events</a></li>';
         }
       ?>
+      <?php 		
+        if($this->session->has_userdata("username")) {
+          echo '<li><a href="'; echo base_url('/Admin_member_ctrl'); echo'" class="'; if($this->session->userdata('active_nav')=='admin_member'){echo'active';}echo'">Member</a></li>';
+        }
+      ?>
       <li><a href="<?php echo base_url('/Aboutus_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='aboutus'){echo'active';}?>">About us</a></li>
       <div class="contact text-center">
-        <button href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: transparent;">Contact us</button>
+        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact us</button>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content bg-dark rounded">
-                  <div class="modal-header" style="border: none;">
+                  <div class="modal-header" style="border-color: #00917A;">
                     <h5 class="modal-title">Contact us</h5>
-                    <button type="button" class="btn btn-close btn-outline-success" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <div class="container">
@@ -88,19 +187,22 @@
             </div>
       </div>
       <div class="login">
-        <button href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A;">Login</button>
+        <?php 
+        if(!$this->session->has_userdata("username")){
+          echo '
+          <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A; width: 120px;">Login</button>
           <!-- Modal -->
           <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content bg-dark rounded">
                 <div class="modal-header" style="border: none;">
                   <h5 class="modal-title">Login</h5>
-                  <button type="button" class="btn btn-close btn-outline-success" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                   <div class="container">
                     <div class="table-responsive">
-                      <form method="POST" action="<?php echo base_url("/Homepage_ctrl/login"); ?>">
+                      <form method="POST" action=" ';echo base_url("/Homepage_ctrl/login"); echo'">
                         <div class="form-group">
                           <label for="exampleInputEmail1"">Username</label>
                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="username"><br>
@@ -120,6 +222,16 @@
               </div>
             </div>
           </div>
+          ';
+        } else {
+          echo '
+          <form action=" ';echo base_url("/Homepage_ctrl/signout"); echo'" method="post">
+          <button type="submit" class="btn btn-primary" style="background-color: #00917A; width: 120px;">Logout</button>
+          </form>
+          ';
+        }
+        ?>
+        
       </div>
   </ul>
 </nav>
