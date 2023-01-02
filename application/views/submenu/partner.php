@@ -183,7 +183,6 @@
                   <h3 class="text-center" style="font-weight: bold;">Become our Partner</h3>
                   <h5 class="mb-4 pb-2 pb-md-3 mb-md-5 text-center">Fill the form bellow</h5>
                   <form method="post" action="<?php echo base_url('Partner_ctrl/sendMail'); ?>">
-
                     <div class="row">
                       <div class="col-md-12 mb-4">
                         <div class="form-outline">
@@ -210,7 +209,6 @@
                     <div class="mt-4 pt-2 text-center">
                       <input class="btn btn-primary btn-lg" type="submit" name="submit_email" value="Submit"/>
                     </div>
-
                   </form>
                   </div>
                 </div>
