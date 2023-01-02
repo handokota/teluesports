@@ -189,6 +189,7 @@
       ScrollReveal().reveal('.moonton', { delay: 1500, duration: 2000 });
       ScrollReveal().reveal('.dracoo', { delay: 2000, duration: 2000 });
       ScrollReveal().reveal('.jawara', { delay: 2500, duration: 2000 });
+      ScrollReveal().reveal('.jawara', { delay: 2500, duration: 2000 });
     </script>  
 </body>
 </html>
