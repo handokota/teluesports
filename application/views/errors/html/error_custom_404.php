@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Page Not Found</title>
-  <link rel="stylesheet" href="assets/css/404/style.css">
+  <link rel="stylesheet" href="<?php echo base_url('assets/css/404/style.css'); ?>">
 </head>
 <body>
   <header>
@@ -14,10 +14,9 @@
     </div>
   </header>
 
-
   <section class="home">
     <div class="image">
-      <img src="img/Scarecrow.png" alt="Scarecrow.png" width="100px">
+      <img src="<?php echo base_url('assets/img/Scarecrow.png'); ?>" alt="Scarecrow.png" width="100px">
     </div>
 
     <div class="content">
@@ -26,8 +25,6 @@
 
       <a href="<?php echo base_url(); ?>" class="btn">Back Homepage</a>
     </div>
-
-    
   </section>
 </body>
 </html>
