@@ -40,7 +40,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
           <!-- Content -->
           <div class="footer-logo">
-            <a href="<?php echo base_url('/Homepage_ctrl'); ?>"><img src="assets/img/logo.png"></a>
+            <a href="<?php echo base_url('homepage'); ?>"><img src="assets/img/logo.png"></a>
             <h5 class="fw-bold mt-3">#GAMEON</h5>
           </div>
           <!-- <h6 class="text-uppercase fw-bold mb-4">
@@ -55,16 +55,16 @@
           <!-- Links -->
           <h5 class="text-uppercase fw-bold mb-4" style="color: #00917A;">MENU</h5>
           <p>
-            <a href="<?php echo base_url('/Homepage_ctrl'); ?>" class="text-reset">Home</a>
+            <a href="<?php echo base_url('homepage'); ?>" class="text-reset">Home</a>
           </p>
           <p>
-            <a href="<?php echo base_url('/Divisions_ctrl'); ?>" class="text-reset">Divisions</a>
+            <a href="<?php echo base_url('divisions'); ?>" class="text-reset">Divisions</a>
           </p>
           <p>
-            <a href="<?php echo base_url('/Partnership_ctrl'); ?>" class="text-reset">Partnership</a>
+            <a href="<?php echo base_url('partnership'); ?>" class="text-reset">Partnership</a>
           </p>
           <p>
-            <a href="<?php echo base_url('/Aboutus_ctrl'); ?>" class="text-reset">About us</a>
+            <a href="<?php echo base_url('about-us'); ?>" class="text-reset">About us</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -74,13 +74,13 @@
           <!-- Links -->
           <h5 class="text-uppercase fw-bold mb-4" style="color: #00917A;">DIVISIONS</h5>
           <p>
-            <a href="<?php echo base_url('/Divisions_ctrl'); ?>" class="text-reset">PUBG Mobile</a>
+            <a href="<?php echo base_url('divisions'); ?>" class="text-reset">PUBG Mobile</a>
           </p>
           <p>
-            <a href="<?php echo base_url('/Divisions_ctrl'); ?>" class="text-reset">Valorant</a>
+            <a href="<?php echo base_url('divisions'); ?>" class="text-reset">Valorant</a>
           </p>
           <p>
-            <a href="<?php echo base_url('/Divisions_ctrl'); ?>" class="text-reset">Mobile Legends</a>
+            <a href="<?php echo base_url('divisions'); ?>" class="text-reset">Mobile Legends</a>
           </p>
           <!-- <p>
             <a href="#!" class="text-reset">Help</a>

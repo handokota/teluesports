@@ -97,24 +97,24 @@
 
 </style>
 <nav class="navbar">
-  <a href="<?php echo base_url('/Homepage_ctrl'); ?>"><img class="navbar-brand" src="assets/img/logo.png" alt="logo"></a>
+  <a href="<?php echo base_url('homepage'); ?>"><img class="navbar-brand" src="assets/img/logo.png" alt="logo"></a>
   <ul class="nav-links">
     <div class="menu">
-      <li><a href="<?php echo base_url('/Homepage_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='homepage'){echo'active';}?>">Home</a></li>
-      <li><a href="<?php echo base_url('/Divisions_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='division'){echo'active';}?>">Divisions</a></li>
-      <!-- <li><a href="<?php echo base_url('/Admin_member_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='member'){echo'active';}?>">Member</a></li> -->
-      <li><a href="<?php echo base_url('/Partnership_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='partnership'){echo'active';}?>">Partnership</a></li>
+      <li><a href="<?php echo base_url('homepage'); ?>" class="<?php if($this->session->userdata('active_nav')=='homepage'){echo'active';}?>">Home</a></li>
+      <li><a href="<?php echo base_url('divisions'); ?>" class="<?php if($this->session->userdata('active_nav')=='division'){echo'active';}?>">Divisions</a></li>
+      <!-- <li><a href="<?php echo base_url('admin-member'); ?>" class="<?php if($this->session->userdata('active_nav')=='member'){echo'active';}?>">Member</a></li> -->
+      <li><a href="<?php echo base_url('partnership'); ?>" class="<?php if($this->session->userdata('active_nav')=='partnership'){echo'active';}?>">Partnership</a></li>
       <?php 		
         if($this->session->has_userdata("username")) {
-          echo '<li><a href="'; echo base_url('/Event_ctrl'); echo'" class="'; if($this->session->userdata('active_nav')=='event'){echo'active';}echo'">Events</a></li>';
+          echo '<li><a href="'; echo base_url('event'); echo'" class="'; if($this->session->userdata('active_nav')=='event'){echo'active';}echo'">Events</a></li>';
         }
       ?>
       <?php 		
         if($this->session->has_userdata("username")) {
-          echo '<li><a href="'; echo base_url('/Admin_member_ctrl'); echo'" class="'; if($this->session->userdata('active_nav')=='admin_member'){echo'active';}echo'">Member</a></li>';
+          echo '<li><a href="'; echo base_url('admin-member'); echo'" class="'; if($this->session->userdata('active_nav')=='admin_member'){echo'active';}echo'">Member</a></li>';
         }
       ?>
-      <li><a href="<?php echo base_url('/Aboutus_ctrl'); ?>" class="<?php if($this->session->userdata('active_nav')=='aboutus'){echo'active';}?>">About us</a></li>
+      <li><a href="<?php echo base_url('about-us'); ?>" class="<?php if($this->session->userdata('active_nav')=='aboutus'){echo'active';}?>">About us</a></li>
       <div class="contact text-center">
         <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact us</button>
             <!-- Modal -->
@@ -202,7 +202,7 @@
                 <div class="modal-body">
                   <div class="container">
                     <div class="table-responsive">
-                      <form method="POST" action=" ';echo base_url("/Homepage_ctrl/login"); echo'">
+                      <form method="POST" action=" ';echo base_url("homepage/login"); echo'">
                         <div class="form-group">
                           <label for="exampleInputEmail1"">Username</label>
                           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="username"><br>
@@ -225,7 +225,7 @@
           ';
         } else {
           echo '
-          <form action=" ';echo base_url("/Homepage_ctrl/signout"); echo'" method="post">
+          <form action=" ';echo base_url("homepage/signout"); echo'" method="post">
           <button type="submit" class="btn btn-primary" style="background-color: #00917A; width: 120px;">Logout</button>
           </form>
           ';
