@@ -40,7 +40,7 @@ class Partner_ctrl extends CI_Controller {
 				$this->email->message($message);
 
 				if($this->email->send()) {
-					redirect('/Partner_ctrl');;
+					redirect('partner');;
 				} else {
 					show_error($this->email->print_debugger());
 				}

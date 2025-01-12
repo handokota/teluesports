@@ -18,6 +18,6 @@ class Divisions_ctrl extends CI_Controller {
 	public function open_member($id)
 	{
 		$this->session->set_userdata('member', $id);
-		redirect('/Member_ctrl');
+		redirect('member');
 	}
 }

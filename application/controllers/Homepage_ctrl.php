@@ -23,7 +23,7 @@ class Homepage_ctrl extends CI_Controller {
 		);
 		if($this->User_model->select_user($data)) {
 			$this->session->set_userdata('username', $data["username"]);
-			redirect('/Admin_ctrl');
+			redirect('admin');
 		} else {
 			$data["error_message"] = "Gagal Login"; 
 			$this->load->view('homepage', $data);

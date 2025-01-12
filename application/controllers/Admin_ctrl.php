@@ -14,7 +14,7 @@ class Admin_ctrl extends CI_Controller {
 		if($this->session->has_userdata("username")) {
 			$this->load->view('submenu/admin');
 		} else {
-			redirect("Homepage_ctrl");
+			redirect("homepage");
 		}
 	}
 	
@@ -30,7 +30,7 @@ class Admin_ctrl extends CI_Controller {
 
 	public function delete($id) {
 		if($this->Division_model->delete_division($id)) {
-			redirect('/Admin_ctrl');
+			redirect('admin');
 		} else {
 			$data["error_message"] = "Gagal Hapus"; 
 			$this->load->view('submenu/admin', $data);
@@ -64,7 +64,7 @@ class Admin_ctrl extends CI_Controller {
 			} else {
 				if($this->Division_model->insert_division($data)){
 				
-					redirect('/Admin_ctrl');
+					redirect('admin');
 		
 				} else {
 					$data['gagal'] = "Gagal menambahkan Divisi";
@@ -107,7 +107,7 @@ class Admin_ctrl extends CI_Controller {
 					$this->load->view('submenu/admin', $data);
 				} else {
 					if($this->Division_model->edit_division($data, $id)) {
-						redirect('Admin_ctrl');
+						redirect('admin');
 					} else {
 						$data['gagal'] = "Gagal menambahkan Divisi";
 						$this->index();
@@ -130,7 +130,7 @@ class Admin_ctrl extends CI_Controller {
 				);
 				if($this->Division_model->edit_division($data, $id)){
 						
-					redirect('/Admin_ctrl');
+					redirect('admin');
 		
 				} else {
 					$data['gagal'] = "Gagal menambahkan Divisi";

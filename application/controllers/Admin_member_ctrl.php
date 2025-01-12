@@ -13,13 +13,13 @@ class Admin_member_ctrl extends CI_Controller {
 		if($this->session->has_userdata("username")) {
 			$this->load->view('submenu/admin_member');
 		} else {
-			redirect("Homepage_ctrl");
+			redirect("homepage");
 		}
 	}
 
 	public function delete($id) {
 		if($this->User_model->delete_user($id)) {
-			redirect('/Admin_member_ctrl');
+			redirect('admin-member');
 		} else {
 			$data["error_message"] = "Gagal Hapus"; 
 			$this->load->view('submenu/admin_member', $data);

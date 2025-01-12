@@ -59,7 +59,7 @@ class Member_ctrl extends CI_Controller {
                 
                 if($this->User_model->insert_user($data)){
                 
-                    redirect('/Homepage_ctrl');
+                    redirect('homepage');
         
                 } else {
                     $data['gagal'] = "Mohon anda gagal melakukan registrasi.";
