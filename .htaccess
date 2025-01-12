@@ -6,3 +6,6 @@ RewriteRule ^(.*)$ index.php/$1 [L]
 <FilesMatch ".(eot|ttf|otf|woff)">
     Header set Access-Control-Allow-Origin "*"
 </FilesMatch>
+# Redirect http to https
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

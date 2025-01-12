@@ -105,7 +105,7 @@
       <!-- Grid row -->
     </div>
     <!-- <br> -->
-    <p class="copyright">&copy 2022 TELU ESPORTS</p>
+    <p class="copyright">Made with ❤️ by Handoko Tejo Atmoko</p>
     <!-- <br> -->
     </div>
 </footer>
