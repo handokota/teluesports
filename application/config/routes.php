@@ -56,5 +56,5 @@ $route['event'] = 'Event_ctrl';
 $route['admin-member'] = 'Admin_member_ctrl';
 $route['about-us'] = 'Aboutus_ctrl';
 $route['default_controller'] = 'Homepage_ctrl';
-$route['404_override'] = '';
+$route['404_override'] = 'Custom404';
 $route['translate_uri_dashes'] = FALSE;
