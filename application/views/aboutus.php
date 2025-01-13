@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>TelU Esports</title>
+    <title>About Us - TelU Esports</title>
     <style>
         * {
             margin: 0px;
@@ -200,7 +200,7 @@
     <?php $this->load->view('navbar'); ?>
     <section class="about-us">
       <div class="container">
-        <p class="aboutus-page">Home > <a style="color:#00917A;">About us</a></p> 
+        <p class="aboutus-page">Home > <a style="color:#00917A;">About Us</a></p> 
         <h1 class="aboutus-title">ABOUT US</h1>
         <p class="aboutus-content">Tel-U Esports adalah sebuah UKM yang mewadahi komunitas-komunitas video games yang ada di Telkom University. Tel-U Esports didirikan pada 19 September 2018 di Telkom University dengan 3 divisi terbesar saat ini yaitu: PUBG Mobile, Valorant, dan Mobile Lengends.</p>
         <div class="container mt-3">

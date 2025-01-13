@@ -33,6 +33,10 @@
         width: 50px;
     }
 
+    .contact img {
+            width: 50%;
+        }
+
     .menu {
         display: flex;
         gap: 1em;
@@ -63,6 +67,14 @@
         border: none;
         padding: 10px;
         color: #ffffff;
+    }
+
+    .menu a {
+        text-align: center;
+        /* padding: 14px; */
+        cursor: pointer;
+        border: none;
+        padding: 10px;
     }
 
     .btn-primary {
@@ -97,10 +109,10 @@
 
 </style>
 <nav class="navbar">
-  <a href="<?php echo base_url('homepage'); ?>"><img class="navbar-brand" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="logo"></a>
+  <a href="<?php echo base_url('/'); ?>"><img class="navbar-brand" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="logo"></a>
   <ul class="nav-links">
     <div class="menu">
-      <li><a href="<?php echo base_url('homepage'); ?>" class="<?php if($this->session->userdata('active_nav')=='homepage'){echo'active';}?>">Home</a></li>
+      <li><a href="<?php echo base_url('/'); ?>" class="<?php if($this->session->userdata('active_nav')=='homepage'){echo'active';}?>">Home</a></li>
       <li><a href="<?php echo base_url('divisions'); ?>" class="<?php if($this->session->userdata('active_nav')=='division'){echo'active';}?>">Divisions</a></li>
       <!-- <li><a href="<?php echo base_url('admin-member'); ?>" class="<?php if($this->session->userdata('active_nav')=='member'){echo'active';}?>">Member</a></li> -->
       <li><a href="<?php echo base_url('partnership'); ?>" class="<?php if($this->session->userdata('active_nav')=='partnership'){echo'active';}?>">Partnership</a></li>
@@ -114,15 +126,15 @@
           echo '<li><a href="'; echo base_url('admin-member'); echo'" class="'; if($this->session->userdata('active_nav')=='admin_member'){echo'active';}echo'">Member</a></li>';
         }
       ?>
-      <li><a href="<?php echo base_url('about-us'); ?>" class="<?php if($this->session->userdata('active_nav')=='aboutus'){echo'active';}?>">About us</a></li>
+      <li><a href="<?php echo base_url('about-us'); ?>" class="<?php if($this->session->userdata('active_nav')=='aboutus'){echo'active';}?>">About Us</a></li>
       <div class="contact text-center">
-        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact us</button>
+        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact Us</button>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content bg-dark rounded">
                   <div class="modal-header" style="border-color: #00917A;">
-                    <h5 class="modal-title">Contact us</h5>
+                    <h5 class="modal-title">Contact Us</h5>
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
@@ -186,13 +198,13 @@
               </div>
             </div>
       </div>
-      <div class="login">
-    <?php if (!$this->session->has_userdata("username")): ?>
+      <!-- <div class="login">
+    <?php if (!$this->session->has_userdata("username")): ?> -->
         <!-- Tombol Login -->
-        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A; width: 120px;">Login</button>
+        <!-- <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A; width: 120px;">Login</button> -->
         
         <!-- Modal Login -->
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content bg-dark rounded">
                     <div class="modal-header" style="border: none;">
@@ -227,14 +239,33 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <?php else: ?>
+        </div> -->
+    <!-- <?php else: ?> -->
         <!-- Tombol Logout -->
-        <form action="<?= base_url('homepage/signout') ?>" method="post">
+        <!-- <form action="<?= base_url('homepage/signout') ?>" method="post">
             <button type="submit" class="btn btn-primary" style="background-color: #00917A; width: 120px;">Logout</button>
         </form>
-    <?php endif; ?>
+    <?php endif; ?> -->
+
+
+    <div class="login">
+    <?php 
+    if (!$this->session->has_userdata("username")) {
+        // Tombol Login dengan active state
+        echo '<a href="' . base_url('login') . '" class="btn btn-primary ' . ($this->session->userdata('active_nav') == 'login' ? 'active' : '') . '" style="background-color: #00917A; width: 120px;">Login</a>';
+    } else {
+        // Tombol Logout
+        echo '
+        <form action="' . base_url('logout') . '" method="post">
+            <button type="submit" class="btn btn-primary" style="background-color: #00917A; width: 120px;">Logout</button>
+        </form>';
+    }
+    ?>
 </div>
+
+
+
+    </div>
 
   </ul>
 </nav>

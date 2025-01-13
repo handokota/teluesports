@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>TelU Esports</title>
+    <title>Partner - TelU Esports</title>
     <style>
         * {
             margin: 0px;
@@ -142,6 +142,13 @@
             border-color: #00917A;
         }
 
+        .partnership {
+            margin-left: 5%;
+            margin-right: 5%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
         .btn-primary {
             background-color: #00917A;
             border: none;
@@ -167,6 +174,11 @@
             font-weight: bold;
             color: #00917A;
         }
+
+        /* .card {
+          margin-bottom: 50px !important;
+        } */
+
     </style>
 </head>
 <body>
@@ -180,12 +192,12 @@
         <div class="container">
           <div class="row justify-content-center align-items-center h-100">
             <div class="col-12 col-lg-9 col-xl-7">
-              <div class="card shadow-2-strong card-registration" style="border: none;">
+              <div class="card shadow-2-strong card-registration" style="border: none">
                 <div class="container">
                   <div class="card-body p-4 p-md-5">
                   <h3 class="text-center" style="font-weight: bold;">Become our Partner</h3>
-                  <h5 class="mb-4 pb-2 pb-md-3 mb-md-5 text-center">Fill the form bellow</h5>
-                  <form method="post" action="<?php echo base_url('Partner_ctrl/sendMail'); ?>">
+                  <h5 class="mb-4 pb-2 pb-md-3 mb-md-5 text-center">Fill the form below</h5>
+                  <form method="post" action="<?php echo base_url('partner/sendmail'); ?>">
                     <div class="row">
                       <div class="col-md-12 mb-4">
                         <div class="form-outline">

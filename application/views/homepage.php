@@ -269,7 +269,7 @@
     <section class="news">
       <!-- <div class="container"> -->
         <h4 class="telu-esports">TEL-U ESPORTS</h4>
-        <p class="news-title">BE ONE OF US!!! OPEN STAFF RECRUITMENTS</p>
+        <p class="news-title">BE ONE OF US!!! OPEN STAFF RECRUITMENTSe</p>
         <p class="news-content">Are you the next Tel-U Esports staff? Ada kabar baik nih untuk kalian karena Tel-U Esports membuka proses rekruitasi lagi loh! Kali ini bukan lagi rekruitasi anggota melainkan bagian kepengurusan tahun selanjutnya. Kalian yang merasa punya dedikasi tinggi dan ingin memajukan nama Esports Telkom University bisa banget join nih.</p>
         <a href="https://linktr.ee/teluesports" target="_blank" class="btn oprec">Registration here</a>
       <!-- </div> -->

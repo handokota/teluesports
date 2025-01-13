@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <title>TelU Esports</title>
+    <title>Partnership - TelU Esports</title>
     <style>
         * {
             margin: 0px;
@@ -162,24 +162,24 @@
         <div class="container">
           <div class="row text-center mb-5" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px;">
             <div class="telkomsel col" style="flex: 1; text-align: left;";>
-              <img src="assets/img/partnership/telkomsel.png">
+              <img src="<?php echo base_url('assets/img/partnership/telkomsel.png'); ?>">
             </div>
             <div class="biznet col" style="flex: 1; text-align: right;">
-              <img src="assets/img/partnership/biznet.png">
+              <img src="<?php echo base_url('assets/img/partnership/biznet.png'); ?>">
             </div>
           </div>
           <div class="row text-center" style="display: flex; align-items: center; flex-wrap: wrap; padding: 0 200px 0 200px; margin-bottom: 100px;">
             <div class="moonton col" style="flex: 1; text-align: center;">
-              <img src="assets/img/partnership/moonton.png">
+              <img src="<?php echo base_url('assets/img/partnership/moonton.png'); ?>">
             </div>
             <div class="dracoo col" style="flex: 1; text-align: center;">
-              <img src="assets/img/partnership/dracoo.png">
+              <img src="<?php echo base_url('assets/img/partnership/dracoo.png'); ?>">
             </div>
             <div class="jawara col" style="flex: 1; text-align: center;">
-              <img src="assets/img/partnership/jawara.png">
+              <img src="<?php echo base_url('assets/img/partnership/jawara.png'); ?>">
             </div>
             <div class="text-center" style="margin-top: 100px;">
-                <a href="<?php echo base_url('/Partner_ctrl'); ?>" class="btn btn-primary btn-lg" style="width: auto; padding: 14px; border-radius: 50px;">Become a partner</a>
+                <a href="<?php echo base_url('partner'); ?>" class="btn btn-primary btn-lg" style="width: 200px; padding: 14px; border-radius: 50px;">Become a partner</a>
             </div>
           </div>
         </div>
