@@ -40,7 +40,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
           <!-- Content -->
           <div class="footer-logo">
-            <a href="<?php echo base_url('homepage'); ?>"><img src="assets/img/logo.png"></a>
+            <a href="<?php echo base_url('homepage'); ?>"><img src="<?php echo base_url('assets/img/logo.png'); ?>"></a>
             <h5 class="fw-bold mt-3">#GAMEON</h5>
           </div>
           <!-- <h6 class="text-uppercase fw-bold mb-4">

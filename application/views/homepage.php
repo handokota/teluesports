@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>">
     <script src="https://kit.fontawesome.com/75f4dada4f.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
@@ -260,6 +260,12 @@
 </head>
 <body>
     <?php $this->load->view('navbar'); ?>
+    <?php if (isset($error_message)): ?>
+<div class="alert alert-danger text-center" style="border-radius: 0" role="alert">
+    <?= $error_message; ?>
+</div>
+<?php endif; ?>
+
     <section class="news">
       <!-- <div class="container"> -->
         <h4 class="telu-esports">TEL-U ESPORTS</h4>
@@ -273,15 +279,15 @@
         <h1 class="home-divisions-title">DIVISIONS</h1>
         <div class="row">
           <div class="pubg col">
-            <img src="assets/img/pubg.png">
+            <img src="<?php echo base_url('assets/img/pubg.png'); ?>">
             <p>PUBG MOBILE</p>
           </div>
           <div class="valorant col">
-            <img src="assets/img/valorant.png">
+            <img src="<?php echo base_url('assets/img/valorant.png'); ?>">
             <p>VALORANT</p>
           </div>
           <div class="ml col">
-            <img src="assets/img/ml.png">
+            <img src="<?php echo base_url('assets/img/ml.png'); ?>">
             <p>MOBILE LEGENDS</p>
           </div>
         </div>
@@ -316,7 +322,7 @@
           <div class="col-lg-9 col-md-6 col-sm-8"><div class="tec">
           <div class="row">
             <div class="col">
-              <img src="assets/img/tec.png">
+              <img src="<?php echo base_url('assets/img/tec.png'); ?>">
             </div>
           </div>
         </div>

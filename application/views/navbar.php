@@ -97,7 +97,7 @@
 
 </style>
 <nav class="navbar">
-  <a href="<?php echo base_url('homepage'); ?>"><img class="navbar-brand" src="assets/img/logo.png" alt="logo"></a>
+  <a href="<?php echo base_url('homepage'); ?>"><img class="navbar-brand" src="<?php echo base_url('assets/img/logo.png'); ?>" alt="logo"></a>
   <ul class="nav-links">
     <div class="menu">
       <li><a href="<?php echo base_url('homepage'); ?>" class="<?php if($this->session->userdata('active_nav')=='homepage'){echo'active';}?>">Home</a></li>
@@ -133,17 +133,17 @@
                                 <tr>
                                   <td class="text-center" style="border: none;">
                                     <a href="mailto:teluesports@gmail.com" target="_blank">
-                                      <img src="assets/img/email.png">
+                                      <img src="<?php echo base_url('assets/img/email.png'); ?>">
                                     </a>
                                   </td>
                                   <td class="text-center" style="border: none;">
                                     <a href="https://www.instagram.com/teluesports/" target="_blank">
-                                      <img src="assets/img/instagram.png">
+                                      <img src="<?php echo base_url('assets/img/instagram.png'); ?>">
                                     </a>
                                   </td>
                                   <td class="text-center" style="border: none;">
                                     <a href="https://www.youtube.com/@TELUESPORTS" target="_blank">
-                                      <img src="assets/img/youtube.png">
+                                      <img src="<?php echo base_url('assets/img/youtube.png'); ?>">
                                     </a>
                                   </td>
                                 </tr>
@@ -158,17 +158,17 @@
                                 <tr>
                                   <td class="text-center" style="border: none;">
                                     <a href="https://page.line.me/?accountId=qiw5424h" target="_blank">
-                                      <img src="assets/img/line.png">
+                                      <img src="<?php echo base_url('assets/img/line.png'); ?>">
                                     </a>
                                   </td>
                                   <td class="text-center" style="border: none;">
                                     <a href="https://www.linkedin.com/company/telkom-university-esports" target="_blank">
-                                      <img src="assets/img/linkind.png">
+                                      <img src="<?php echo base_url('assets/img/linkedin.png'); ?>">
                                     </a>
                                   </td>
                                   <td class="text-center" style="border: none;">
                                     <a href="https://www.tiktok.com/@teluesports" target="_blank">
-                                      <img src="assets/img/tiktok.png">
+                                      <img src="<?php echo base_url('assets/img/tiktok.png'); ?>">
                                     </a>
                                   </td>
                                 </tr>
@@ -187,52 +187,55 @@
             </div>
       </div>
       <div class="login">
-        <?php 
-        if(!$this->session->has_userdata("username")){
-          echo '
-          <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A; width: 120px;">Login</button>
-          <!-- Modal -->
-          <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content bg-dark rounded">
-                <div class="modal-header" style="border: none;">
-                  <h5 class="modal-title">Login</h5>
-                  <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <div class="table-responsive">
-                      <form method="POST" action=" ';echo base_url("homepage/login"); echo'">
-                        <div class="form-group">
-                          <label for="exampleInputEmail1"">Username</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="username"><br>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" name="password">
-                          <br>
-                        </div>
-                        <div class="login text-center">
-                          <button type="submit" class="btn btn-primary">Login</button>
-                        </div>  
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          ';
-        } else {
-          echo '
-          <form action=" ';echo base_url("homepage/signout"); echo'" method="post">
-          <button type="submit" class="btn btn-primary" style="background-color: #00917A; width: 120px;">Logout</button>
-          </form>
-          ';
-        }
-        ?>
+    <?php if (!$this->session->has_userdata("username")): ?>
+        <!-- Tombol Login -->
+        <button href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" style="background-color: #00917A; width: 120px;">Login</button>
         
-      </div>
+        <!-- Modal Login -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark rounded">
+                    <div class="modal-header" style="border: none;">
+                        <h5 class="modal-title">Login</h5>
+                        <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="table-responsive">
+                                <form method="POST" action="<?= base_url('homepage/login') ?>">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username" required>
+                                    </div>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                                    </div>
+                                    <br>
+                                    <div class="text-center mb-3">
+                                        <p class="text-light">Don't have an account? 
+                                            <a href="<?= base_url('homepage/signup') ?>" style="color: #00bfff;">Create account</a>
+                                        </p>
+                                    </div>
+                                    <div class="login text-center">
+                                        <button type="submit" class="btn btn-primary">Login</button>
+                                    </div>  
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php else: ?>
+        <!-- Tombol Logout -->
+        <form action="<?= base_url('homepage/signout') ?>" method="post">
+            <button type="submit" class="btn btn-primary" style="background-color: #00917A; width: 120px;">Logout</button>
+        </form>
+    <?php endif; ?>
+</div>
+
   </ul>
 </nav>
 

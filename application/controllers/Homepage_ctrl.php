@@ -25,7 +25,8 @@ class Homepage_ctrl extends CI_Controller {
 			$this->session->set_userdata('username', $data["username"]);
 			redirect('admin');
 		} else {
-			$data["error_message"] = "Gagal Login"; 
+			$data["error_message"] = "Invalid username or password!"; 
+			$data['event'] = $this->Event_model->get_event(); // Pastikan data event diambil
 			$this->load->view('homepage', $data);
 		}
 
